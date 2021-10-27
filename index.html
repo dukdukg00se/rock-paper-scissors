@@ -5,21 +5,42 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOP Foundations Project: Rock Paper Scissors</title>
+  <link href="styles/reset.css" rel="stylesheet">
+  <link href="styles/styles.css" rel="stylesheet">
+
+
 </head>
 
 <body>
-  <h1>Rock Paper Scissors</h1>
 
-  <div>
-    <h2>Count</h2>
-    <p>Player: 0</p>
-    <p>Computer: 0</p>
-  </div>
+  <header>
+    <h1>Rock Paper Scissors</h1>
+    <p>First to Five Wins!</p>
+  </header>
 
+  <main>
+    <div id="score-container">
+      <div id="result">
+        <h2>Result</h2>
+      </div>
+      <div id="player-score">
+        <p>Player: 0</p>
+      </div>
+      <div id="computer-score">
+        <p>Computer: 0</p>
+      </div>
+    </div>
 
-  <button id='rock'>Rock</button>
-  <button id='paper'>Paper</button>
-  <button id='scissor'>Scissor</button>
+    <div id="buttons-container">
+      <button id='rock'>Rock</button>
+      <button id='paper'>Paper</button>
+      <button id='scissor'>Scissor</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>By dukdukg00se 2021</p>
+  </footer>
 
   <script src="scripts/main.js"></script>
 </body>
