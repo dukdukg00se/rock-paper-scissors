@@ -1,36 +1,99 @@
 body, html {
   height: 100%;
-  font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Mountains of Christmas", cursive, Arial;
   display: flex;
   flex-direction: column;
-  background-color: rgba(18, 21, 22, 75%);
-  color: #2f95e7;
-  font-size: 12px;;
+  background-color: rgb(212, 255, 162);
+  color: #0e8f15;
+  font-size: 12px;
+  letter-spacing: .2rem;
+  border: ridge red 10px;
 }
 
 header, body, footer {
-  border: solid 3px #2f95e7;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
-header, footer {
-  text-align: center;
-  padding: 10px;
 
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 20px;
+  padding: 20px;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+#header-text {
+  color: red;
   font-weight: bold;
 }
 
+
 main {
+  color: red;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+
+#score-container {
+  
+  text-align: center;
+}
+
+#picks-container {
+  /* width: 30vmax; */
+  /* height: 25vmin; */
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 20px;
+  column-gap: 25%;
+
+
+}
+
+#player-score, #computer-score {
+  width: 200px;
+  padding: 10px;
+}
+
+.player-pick, .computer-pick {
+  border: solid 1px purple;
+  padding: 10px;
+  height: 225px;
+  width: 225px;
+  opacity: 50%;
+}
+
+.play-buttons {
+  background-color: rgb(212, 255, 162);
+  border: 3px solid red;
+  border-radius: 10px;
+}
+
+.play-imgs {
+  height: 150px;
+  width: 150px;
+  opacity: 40%;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 20px;
 }
 
 #modal {
@@ -49,3 +112,8 @@ main {
   height: 40%;
   text-align: center;
 }
+
+
+
+
+

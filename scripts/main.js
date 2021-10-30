@@ -125,31 +125,59 @@ function playRound(playerSelection, computerSelection) {
   
 }
 
-let playButtons = document.querySelectorAll('#play-buttons > button');
+let playButtons = document.querySelectorAll('.play-buttons');
 playButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
     playerSelection = btn.id;
     computerSelection = computerPlay();
 
-    console.log(playerSelection, computerSelection);
+    
+    
+  
+  
+    
+    let playerImg = document.querySelector('.player-pick');
+
+    if (playerSelection === 'rock') {
+      playerImg.src = "images/rock.png";
+    } 
+    if (playerSelection === 'paper') {
+      playerImg.src = "images/paper.png";
+    } 
+    if (playerSelection === 'scissor') {
+      playerImg.src = "images/scissor.png";
+    } 
+
+    let computerImg = document.querySelector('.computer-pick');
+
+    if (computerSelection === 'rock') {
+      computerImg.src = "images/rock.png";
+    } 
+    if (computerSelection === 'paper') {
+      computerImg.src = "images/paper.png";
+    } 
+    if (computerSelection === 'scissor') {
+      computerImg.src = "images/scissor.png";
+    } 
+     
+ 
+ 
+ 
 
     let result = document.querySelector('#result');
     result.textContent = playRound(playerSelection, computerSelection);
 
     let playerScore = document.querySelector('#player-score');
-    playerScore.textContent = `Player Score: ${humanWins}`;
+    console.log(playerScore);
+    playerScore.textContent = `Player: ${humanWins}`;
 
     let computerScore = document.querySelector('#computer-score');
-    computerScore.textContent = `Computer Score: ${computerWins}`;
-
-    console.log(computerWins, humanWins);
+    computerScore.textContent = `Computer: ${computerWins}`;
 
     let myModal = document.querySelector('#modal');
-    if (computerWins === 2 || humanWins === 2) {
+    if (computerWins === 3 || humanWins === 3) {
       myModal.style.display = 'block';
     }
-
-
 
     let repeatGame = document.querySelector('#modal > #repeat');
     repeatGame.addEventListener('click', (e) => {
@@ -160,11 +188,18 @@ playButtons.forEach((btn) => {
       playerScore.textContent = `Player: ${humanWins}`;
       computerScore.textContent = `Computer: ${computerWins}`;
       result.textContent = 'Result';
+      playerImg.src = "images/xmas-dog-cutout.png";
+      computerImg.src = "images/grinch.png";
 
     });
 
+    console.log(playerSelection, computerSelection);
+    console.log(computerWins, humanWins);
   });
 });
+
+
+
 
 
 
@@ -177,10 +212,6 @@ window.onclick = function(e) {
   }
 }
 */
-
-
-
-
 
 /*
 if (humanWins < computerWins) {

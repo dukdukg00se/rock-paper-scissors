@@ -8,14 +8,16 @@
   <link href="styles/reset.css" rel="stylesheet">
   <link href="styles/styles.css" rel="stylesheet">
 
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
   <header>
     <h1>Rock Paper Scissors</h1>
-    <p>First to Five Wins!</p>
+    <p id="header-text">First to Five!</p>
   </header>
 
   <main>
@@ -23,24 +25,47 @@
       <div id="result">
         <h2>Result</h2>
       </div>
-      <div id="player-score">
-        <p>Player Score: 0</p>
+
+      <div id="picks-container">
+        <div id="player-info">
+
+          <div id="player-score">
+            <p>Player: 0</p>
+          </div>
+          <div id="player-pick">
+            <img class="player-pick" src="images/xmas-dog-cutout.png">
+          </div>
+          
+        </div>
+
+        
+        <div id="computer-info">
+          <div id="computer-score">
+            <p>Computer: 0</p>
+          </div>
+          <div id="computer-pick">
+            <img class="computer-pick" src="images/grinch.png">
+          </div>
+        </div>
+
       </div>
-      <div id="computer-score">
-        <p>Computer Score: 0</p>
-      </div>
+
     </div>
 
-    <div id="modal">
+
+
+
+
+    <div id="play-container">
+      <button class="play-buttons" id='rock'><img class="play-imgs" src="images/rock.png" alt="A rock gesture"></button>
+      <button class="play-buttons" id='paper'><img class="play-imgs" src="images/paper.png" alt="A paper gesture"></button>
+      <button class="play-buttons" id='scissor'><img class="play-imgs" src="images/scissor.png" alt="A scissor gesture"></button>
+    </div>
+
+    <div class="active" id="modal">
       <h2>Result of game</h2>
       <p>Would you like to play again?</p>
       <button id="repeat">Repeat</button>
-    </div>
-
-    <div id="play-buttons">
-      <button id='rock'>Rock</button>
-      <button id='paper'>Paper</button>
-      <button id='scissor'>Scissor</button>
     </div>
   </main>
 
