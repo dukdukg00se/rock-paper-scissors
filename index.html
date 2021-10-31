@@ -7,7 +7,6 @@
   <title>TOP Foundations Project: Rock Paper Scissors</title>
   <link href="styles/reset.css" rel="stylesheet">
   <link href="styles/styles.css" rel="stylesheet">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
@@ -17,53 +16,38 @@
 
   <header>
     <h1>Rock Paper Scissors</h1>
-    <p id="header-text">First to Five!</p>
+    <p class="header-text">First to Five!</p>
   </header>
 
   <main>
-    <div id="score-container">
-      <div id="result">
-        <h2>Result</h2>
-      </div>
+    <div id="result-container">
 
-      <div id="picks-container">
+      <h2 class="header-text" id="result">Result</h2>
+      <div id="game-info">
         <div id="player-info">
-
-          <div id="player-score">
-            <p>Player: 0</p>
-          </div>
-          <div id="player-pick">
+          <p id="player-score">Player: 0</p>          
+          <div id="player-pick-image-container">
             <img class="player-pick" src="images/xmas-dog-cutout.png">
-          </div>
-          
+          </div>       
         </div>
-
-        
         <div id="computer-info">
-          <div id="computer-score">
-            <p>Computer: 0</p>
-          </div>
-          <div id="computer-pick">
+          <p id="computer-score">Computer: 0</p>
+          <div id="computer-pick-img-container">
             <img class="computer-pick" src="images/grinch.png">
           </div>
         </div>
-
       </div>
 
     </div>
 
-
-
-
-
-    <div id="play-container">
+    <div id="buttons-container">
       <button class="play-buttons" id='rock'><img class="play-imgs" src="images/rock.png" alt="A rock gesture"></button>
       <button class="play-buttons" id='paper'><img class="play-imgs" src="images/paper.png" alt="A paper gesture"></button>
       <button class="play-buttons" id='scissor'><img class="play-imgs" src="images/scissor.png" alt="A scissor gesture"></button>
     </div>
 
     <div class="active" id="modal">
-      <h2>Result of game</h2>
+      <h2 id="outcome">Result of game</h2>
       <p>Would you like to play again?</p>
       <button id="repeat">Repeat</button>
     </div>

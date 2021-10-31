@@ -76,7 +76,9 @@ let computerWins = 0;
 let humanWins = 0;
 let computerSelection;
 let playerSelection;
-
+const playerImg = document.querySelector('.player-pick');
+const computerImg = document.querySelector('.computer-pick');
+const outcome = document.querySelector('#outcome');
 
 function computerPlay() {
   let choice = Math.round(Math.random() * 3);
@@ -89,7 +91,6 @@ function computerPlay() {
     return 'scissor';
   }
 }
-  
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === 'rock') {
     if (computerSelection === 'paper') {
@@ -124,62 +125,63 @@ function playRound(playerSelection, computerSelection) {
   }
   
 }
+function specifyImgSrc(imgOne, imgTwo) {
+  let playerChoice = imgOne;
+
+  if (playerSelection === 'rock') {
+    playerChoice.src = "images/rock.png";
+  } 
+  if (playerSelection === 'paper') {
+    playerChoice.src = "images/paper.png";
+  } 
+  if (playerSelection === 'scissor') {
+    playerChoice.src = "images/scissor.png";
+  } 
+
+  let computerChoice = imgTwo;
+  if (computerSelection === 'rock') {
+    computerChoice.src = "images/rock.png";
+  } 
+  if (computerSelection === 'paper') {
+    computerChoice.src = "images/paper.png";
+  } 
+  if (computerSelection === 'scissor') {
+    computerChoice.src = "images/scissor.png";
+  } 
+}
 
 let playButtons = document.querySelectorAll('.play-buttons');
 playButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
     playerSelection = btn.id;
     computerSelection = computerPlay();
-
     
-    
-  
-  
-    
-    let playerImg = document.querySelector('.player-pick');
-
-    if (playerSelection === 'rock') {
-      playerImg.src = "images/rock.png";
-    } 
-    if (playerSelection === 'paper') {
-      playerImg.src = "images/paper.png";
-    } 
-    if (playerSelection === 'scissor') {
-      playerImg.src = "images/scissor.png";
-    } 
-
-    let computerImg = document.querySelector('.computer-pick');
-
-    if (computerSelection === 'rock') {
-      computerImg.src = "images/rock.png";
-    } 
-    if (computerSelection === 'paper') {
-      computerImg.src = "images/paper.png";
-    } 
-    if (computerSelection === 'scissor') {
-      computerImg.src = "images/scissor.png";
-    } 
-     
+    specifyImgSrc(playerImg, computerImg);
  
  
- 
-
-    let result = document.querySelector('#result');
+    const result = document.querySelector('#result');
     result.textContent = playRound(playerSelection, computerSelection);
 
-    let playerScore = document.querySelector('#player-score');
-    console.log(playerScore);
+    const playerScore = document.querySelector('#player-score');
     playerScore.textContent = `Player: ${humanWins}`;
 
-    let computerScore = document.querySelector('#computer-score');
+    const computerScore = document.querySelector('#computer-score');
     computerScore.textContent = `Computer: ${computerWins}`;
 
     let myModal = document.querySelector('#modal');
-    if (computerWins === 3 || humanWins === 3) {
+    if (computerWins === 5 || humanWins === 5) {
       myModal.style.display = 'block';
+
+      if (computerWins > humanWins) {
+        outcome.textContent = 'Womp Womp You Lost!';
+      } else {
+        outcome.textContent = 'Yaaaay You Won!';
+      }
     }
 
-    let repeatGame = document.querySelector('#modal > #repeat');
+
+
+    const repeatGame = document.querySelector('#modal > #repeat');
     repeatGame.addEventListener('click', (e) => {
       
       myModal.style.display = 'none';
@@ -204,19 +206,4 @@ playButtons.forEach((btn) => {
 
 
 
-/*
-window.onclick = function(e) {
-  //console.log(e.target == repeat, e.target == modal, e.target);
-  if (e.target !== modal) {
-    myModal.style.display = "none";
-  }
-}
-*/
 
-/*
-if (humanWins < computerWins) {
-  console.log('Sorry, better luck next time.');
-} else {
-  console.log('You lucky ducky!')
-}
-*/
