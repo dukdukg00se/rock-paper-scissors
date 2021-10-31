@@ -79,6 +79,7 @@ let playerSelection;
 const playerImg = document.querySelector('.player-pick');
 const computerImg = document.querySelector('.computer-pick');
 const outcome = document.querySelector('#outcome');
+const buttonsContainer = document.querySelector('#buttons-container');
 
 function computerPlay() {
   let choice = Math.round(Math.random() * 3);
@@ -171,6 +172,7 @@ playButtons.forEach((btn) => {
     let myModal = document.querySelector('#modal');
     if (computerWins === 5 || humanWins === 5) {
       myModal.style.display = 'block';
+      buttonsContainer.style.display = 'none';
 
       if (computerWins > humanWins) {
         outcome.textContent = 'Womp Womp You Lost!';
@@ -185,6 +187,7 @@ playButtons.forEach((btn) => {
     repeatGame.addEventListener('click', (e) => {
       
       myModal.style.display = 'none';
+      buttonsContainer.style.display = 'block';
       humanWins = 0;
       computerWins = 0;
       playerScore.textContent = `Player: ${humanWins}`;
