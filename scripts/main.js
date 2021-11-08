@@ -82,11 +82,11 @@ const outcome = document.querySelector('#outcome');
 const buttonsContainer = document.querySelector('#buttons-container');
 
 function computerPlay() {
-  let choice = Math.round(Math.random() * 3);
+  let choice = Math.floor(Math.random() * 3);
 
-  if (choice === 1) {
+  if (choice === 0) {
     return 'rock';
-  } else if (choice === 2) {
+  } else if (choice === 1) {
     return 'paper';
   } else {
     return 'scissor';
